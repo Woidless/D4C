@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ way.name }} likes</h1>
+  <ul>
+    {% for like in likes %}
+      <li>{{ like.user.username }} ({{ like.created}})</li>
+    {% empty %}
+      <li>No likes yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
